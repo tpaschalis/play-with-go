@@ -1,0 +1,30 @@
+$ pwd
+/home/gopher
+$ mkdir public
+$ cd public
+$ cat <<EOD > /home/gopher/public/public.go
+package public
+
+import (
+    "fmt"
+    "io/ioutil"
+)
+
+func DoSomething() {
+    fmt.Fprintf(ioutil.Discard, "This doesn't print anything")
+}
+EOD
+$ cat <<EOD > /home/gopher/public/public.go
+package public
+
+import (
+    "fmt"
+    "io/ioutil"
+)
+
+func DoSomething() {
+    fmt.Fprintf(ioutil.Discard, "This doesn't print anything")
+}
+EOD
+$ go test -v ./...
+?   	_/home/gopher/public	[no test files]
